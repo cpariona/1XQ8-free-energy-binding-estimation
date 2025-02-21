@@ -1,1 +1,1 @@
-# 1XQ8-delta-gibbs-estimation
+# 1XQ8-free-energy-binding-estimation
