@@ -83,5 +83,5 @@ RDKit_PaDEL = RDKit_PaDEL_scaled_df[Selected_features]
 
 # Make predictions
 predictions = lgbm_model.predict(RDKit_PaDEL)
-st.write("Delta Gibbs Prediction")
+st.write("Free Energy Binding Prediction")
 st.dataframe(predictions)
