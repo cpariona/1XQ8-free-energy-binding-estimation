@@ -7,3 +7,5 @@ joblib
 padelpy==0.1.16
 padel-pywrapper==1.0.0
 lightgbm
+matplotlib==3.8.3
+
