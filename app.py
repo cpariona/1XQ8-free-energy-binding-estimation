@@ -24,7 +24,7 @@ Esta herramienta permite estimar la **afinidad energética (ΔG)** de moléculas
 
 📌 El sitio de unión evaluado corresponde al rango de residuos **61 a 100**, identificado como crítico en el proceso de agregación de la αSyn.
 
-🧬 Para representar las moléculas se calcularon descriptores moleculares usando **RDKit** y **PaDEL**. Luego, se aplicó un preprocesamiento, selección de características y escalado. Los datos resultantes se utilizaron para entrenar un modelo de Machine Learning (**LGBM Regressor**), que alcanzó un coeficiente de determinación **R² = 0.7796**, reflejando un buen desempeño predictivo.
+🧬 Para representar las moléculas se calcularon descriptores moleculares usando **RDKit** y **PaDEL**. Luego, se aplicó un preprocesamiento, selección de características y validación cruzada. Los datos resultantes se utilizaron para entrenar un modelo de Machine Learning (**LGBM Regressor**), que alcanzó un coeficiente de determinación **R² = 0.7796**, reflejando un buen desempeño predictivo.
 """)
 
 # ------------------------- ENTRADA DEL USUARIO -------------------------
