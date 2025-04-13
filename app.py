@@ -18,14 +18,17 @@ lgbm_model = joblib.load('./archivos/lgbm_best_model.joblib')
 
 st.title("🧪 Predicción de Afinidad Energética de Ligandos hacia α-Sinucleína (1XQ8)")
 st.markdown("""
-Esta herramienta permite estimar la **afinidad energética (ΔG)** de moléculas candidatas hacia la proteína **alfa-sinucleína (αSyn)**, implicada en la **enfermedad de Parkinson**.
+Esta herramienta permite estimar la **afinidad energética (ΔG)** de moléculas candidatas hacia la proteína **alfa-sinucleína (αSyn)**, implicada en el desarrollo de la **enfermedad de Parkinson**.
 
-👉 El modelo fue entrenado utilizando como referencia los resultados de **docking molecular** realizados con moléculas filtradas de las bases de datos **PubChem**, **DrugBank** y **UNPD**, acopladas a la proteína **alfa-sinucleína humana (PDB ID: 1XQ8)**.
+🧪 El modelo fue entrenado a partir de los resultados de **docking molecular**, realizados con compuestos filtrados de las bases de datos **PubChem**, **DrugBank** y **UNPD**, acoplados a la proteína **alfa-sinucleína humana (PDB ID: 1XQ8)**.
 
-📌 El sitio de unión evaluado corresponde al rango de residuos **61 a 100**, identificado como crítico en el proceso de agregación de la αSyn.
+📍 El sitio de unión seleccionado abarca el rango de residuos **61 a 100**, reconocido como una región clave en el proceso de agregación de la αSyn.
 
-🧬 Para representar las moléculas se calcularon descriptores moleculares usando **RDKit** (129 descriptores seleccionados) y **PaDEL** (928 descriptores seleccionados). Luego, se aplicó un preprocesamiento, selección de características y validación cruzada. Los datos resultantes se utilizaron para entrenar un modelo de Machine Learning (**LGBM Regressor**), que alcanzó un coeficiente de determinación **R² = 0.7796**, reflejando un buen desempeño predictivo.
+🔬 Para representar numéricamente las propiedades moleculares, se calcularon **129 descriptores** de **RDKit** y **928 descriptores** de **PaDEL**. Tras un proceso de selección de características, se conservaron **104 descriptores de RDKit** y **426 de PaDEL**, considerados los más relevantes para la predicción.
+
+🤖 Con estos datos, se entrenó un modelo de **aprendizaje automático** utilizando el algoritmo **LGBM Regressor**, aplicando validación cruzada y optimización de hiperparámetros mediante **Grid Search**. El modelo final alcanzó un coeficiente de determinación **R² = 0.7796**, indicando un excelente desempeño predictivo.
 """)
+
 
 # ------------------------- ENTRADA DEL USUARIO -------------------------
 
