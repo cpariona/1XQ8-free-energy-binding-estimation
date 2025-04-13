@@ -57,12 +57,14 @@ if mol:
     df = pd.DataFrame({'smiles': [compound_smiles]})
 
     # RDKit
+    with st.spinner("Calculando descriptores RDKit..."):
     RDKit_descriptors = [get_selected_RDKitdescriptors(m, RDKit_select_descriptors) for m in df['smiles']]
     RDKit_df = pd.DataFrame(RDKit_descriptors)
     st.subheader("📊 Descriptores RDKit seleccionados")
     st.dataframe(RDKit_df)
 
     # PaDEL
+    with st.spinner("Calculando descriptores PaDEL..."):
     PaDEL_descriptors = from_smiles(df['smiles'].tolist())
     PaDEL_df_ = pd.DataFrame(PaDEL_descriptors)
     PaDEL_df = PaDEL_df_.loc[:, PaDEL_select_descriptors]
