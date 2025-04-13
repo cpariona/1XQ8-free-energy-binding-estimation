@@ -16,12 +16,15 @@ lgbm_model = joblib.load('./archivos/lgbm_best_model.joblib')
 
 # ------------------------- INTERFAZ DE LA APP -------------------------
 
-st.title("🧪 Predicción de Afinidad Energética de Ligandos hacia α-Sinucleína")
+st.title("🧪 Predicción de Afinidad Energética de Ligandos hacia α-Sinucleína (1XQ8)")
 st.markdown("""
 Esta herramienta permite estimar la **afinidad energética (ΔG)** de moléculas candidatas hacia la proteína **alfa-sinucleína (αSyn)**, implicada en la **enfermedad de Parkinson**.
 
-👉 El modelo se entrenó usando datos de **docking molecular** como referencia, y descriptores moleculares generados con **RDKit** y **PaDEL**. 
-Primero se realizó un **filtrado de bases de datos moleculares**, seguido por análisis ADMET y simulaciones de acoplamiento. Los resultados de afinidad se usaron para entrenar un modelo de Machine Learning optimizado (LGBM Regressor) con un coeficiente de determinación R² de **0.7796**.
+👉 El modelo fue entrenado utilizando como referencia los resultados de **docking molecular** realizados con moléculas filtradas de las bases de datos **PubChem**, **DrugBank** y **UNPD**, acopladas a la proteína **alfa-sinucleína humana (PDB ID: 1XQ8)**.
+
+📌 El sitio de unión evaluado corresponde al rango de residuos **61 a 100**, identificado como crítico en el proceso de agregación de la αSyn.
+
+🧬 Para representar las moléculas se calcularon descriptores moleculares usando **RDKit** y **PaDEL**. Luego, se aplicó un preprocesamiento, selección de características y escalado. Los datos resultantes se utilizaron para entrenar un modelo de Machine Learning (**LGBM Regressor**), que alcanzó un coeficiente de determinación **R² = 0.7796**, reflejando un buen desempeño predictivo.
 """)
 
 # ------------------------- ENTRADA DEL USUARIO -------------------------
